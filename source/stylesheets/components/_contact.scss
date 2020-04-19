@@ -1,0 +1,46 @@
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: transparent;
+  color: black !important;
+  padding: 0 5px;
+//   border-radius: 50%;
+  border-color: #212529 !important;
+  border-style: solid;
+  border-width: 2px;
+  height: 60px;
+  width: 180px;
+  cursor: pointer;
+  opacity: 0.7;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  font-weight: 700;
+  text-align: center;
+
+  box-shadow: inset 0px 0px 0px #212529;
+  transition: all 0.5s !important;
+}
+
+
+.open-button:hover {
+    background-color: #212529 !important;
+    color: white !important;
+    opacity: 1;
+    text-decoration: none !important;
+
+    box-shadow: inset 0px 80px 0px #212529;
+
+
+}
+
+
+// .button-fill-top {
+//     box-shadow: inset 0px 0px 0px #2F3B47;
+//     transition: all 0.5s !important;
+//     }
+    
+//     .button-fill-top:hover {
+//     box-shadow: inset 0px 80px 0px #2F3B47;
+//     }

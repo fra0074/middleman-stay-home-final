@@ -1,0 +1,8 @@
+<% array_date = date.split("/") %>
+<% mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre "] %>
+<% string_date = "#{array_date[2]} #{mesi[array_date[1].to_i]} ore #{time}  " %>
+<div class="list-event-group mt-4">
+  <h3 class="title-event mt-1 mb-3"><%= title %> <span class="label-new"> ⭐ New</span> <span class="label-<%= label %>  "> 🙌 Today</span> </h3>
+  <p class="event-date">🗓️ <%= string_date  %> - Facebook </p>
+  <p class="event-name">👉 <%= topic %> - <%= user %></p>
+</div>

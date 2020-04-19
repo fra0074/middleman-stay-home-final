@@ -1,0 +1,66 @@
+<div class="left-part">
+  <% # <div class="diagonal"></div> %>
+  <div class="second-title mt-5">
+    <p class="sub-title text">un' iniziativa</p>
+    <%= tag :img, src: "../../images/le-wagon.png", class: "logo m-top" %>
+  </div>
+  <div class="main-title">
+    <h1 class="title red-color">MIGLIORA</h1>
+    <h2 class="title">STANDO A CASA</h2>
+  </div>
+  <div id="third" class="third-title index">
+    <p class="mt-5 index text">supported by</p>
+    <div class="logos-title">
+      <div class="logos-container">
+        <div class="logos">
+          <%= tag :img, src: "../../images/ftech.png", class: "logo-ft" %>
+          <%= tag :img, src: "../../images/fthub-milan.jpg", class: "logo-ft-milan" %>
+          <%= tag :img, src: "../../images/bfrance.jpg", class: "logo-bf" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="circle-top"></div>
+  <% # <div id="circle-bottom"></div> %>
+</div>
+<div class="right-part">
+  <a class="open-button" href="#">PROPONI IL TUO WEBINAR</a>
+  <div class="list">
+    <div class="list-intro">
+      <p>🚀 Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio temporibus numquam quos necessitatibus id nihil vel non, unde assumenda dignissimos laboriosam ipsum illo repudiandae, corrupti ea exercitationem. Accusamus, ad cupiditate.</p>
+      <br>
+      <br>
+      <% firebase_get.each do |value| %>
+        <p><%= value  %></p>
+        <% label = Date.today == Date.parse(value["date"]) ? "today" : "past" %>
+        <% if label == "today" %>
+          <div class="current-events">
+            <%= partial "event", locals: { 
+            date: value["date"],
+            time: value["time"], 
+            title: value["title"],
+            user: value["user"],
+            topic: value["topic"],
+            label: label } %>
+          </div>
+          <br>
+          <br>
+        <% else  %>
+          <hr>
+          <br>
+          <br>
+          <div class="past-events">
+            <%= partial "event", locals: { 
+            date: value["date"],
+            time: value["time"], 
+            title: value["title"],
+            user: value["user"],
+            topic: value["topic"],
+            label: label } %>
+          </div>
+        <% end  %>
+      <% end %>
+    </div>
+  </div>
+</div>
